@@ -1,7 +1,7 @@
 <script>
 
     import UploadAddImages from "./UploadAddImages.svelte";
-
+    import FestOptions from "./FestOptions.svelte";
     export let festivalDtls;
     export let festivalWeather;
     export let map;
@@ -68,6 +68,9 @@
                     </tbody>
                 </table>
             </div>
+            {#if festivalDtls}
+            <FestOptions fest="{festivalDtls}" />
+                {/if}
 
             <div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
                 <table class="uk-table uk-table-divider">
@@ -92,6 +95,6 @@
     </div>
 </div>
 {#if festivalDtls}
-<UploadAddImages name="{festivalDtls.name}" />
+<UploadAddImages name="{festivalDtls.name}" festID="{festivalDtls._id}" />
 {/if}
 

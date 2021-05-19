@@ -171,4 +171,16 @@ export class MetalfestService {
             return [];
         }
     }
+
+    async uploadImage(imagefile, name) {
+        try {
+            const image = {
+                imagefile: imagefile,
+                festName: name
+            }
+            const response = await axios.post(this.baseUrl + "/api/imageadd", image);
+        } catch (error) {
+            return [];
+        }
+    }
 }

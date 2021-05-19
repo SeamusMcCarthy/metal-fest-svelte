@@ -22,13 +22,11 @@
     });
 
     async function addFestival() {
-        // console.log("category list : " + categoryList);
         let ifile = files[0];
         let reader = new FileReader();
         reader.onload = async function(e) {
             imagefile = e.target.result;
             let success = await metalfestService.addFestival(name, city, country, latitude, longitude, description, startDate, endDate, imagefile, categoryList);
-            console.log("Success = " + success);
             if (success) {
                 errorMessage = "Festival added";
             } else {
