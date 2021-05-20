@@ -187,7 +187,7 @@ export class MetalfestService {
 
 
 
-        async uploadImage(imagefile, name) {
+    async uploadImage(imagefile, name) {
         try {
             const image = {
                 imagefile: imagefile,
