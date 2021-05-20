@@ -15,9 +15,7 @@ export class MetalfestService {
     async getFestivals() {
         try {
             const response = await axios.get(this.baseUrl + "/api/festivals");
-            // this.festivalList = await response.json();
             this.festivalList = await response.data;
-            // console.log("Response : " + this.festivalList);
             return this.festivalList;
         } catch (error) {
             return [];
@@ -27,7 +25,6 @@ export class MetalfestService {
     async getCategories() {
         try {
             const response = await axios.get(this.baseUrl + "/api/categories");
-            // this.categoryList = await response.json();
             this.categoryList = await response.data;
             return this.categoryList;
         } catch (error) {
@@ -126,7 +123,6 @@ export class MetalfestService {
                 categoryFestivals : categoryFestivals
             };
             const response = await axios.post(this.baseUrl + "/api/categories", newCategory);
-            console.log("Response status = " + response.status);
             return response.status == 201;
         } catch (error) {
             return false;
@@ -172,7 +168,26 @@ export class MetalfestService {
         }
     }
 
-    async uploadImage(imagefile, name) {
+    async deleteFestival(id) {
+        try {
+            const response = await axios.delete(this.baseUrl + "/api/festivals/" + id);
+            console.log(response.data.success);
+        } catch (error) {
+            return [];
+        }
+    }
+
+    async attendFestival(festID, userID) {
+        try {
+            const response = await axios.put(this.baseUrl + "/api/festivals/" + festID + "/" + userID);
+        } catch (error) {
+            return []
+        }
+    }
+
+
+
+        async uploadImage(imagefile, name) {
         try {
             const image = {
                 imagefile: imagefile,

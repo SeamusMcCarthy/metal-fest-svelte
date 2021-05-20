@@ -1,17 +1,17 @@
 <script>
     import {user} from "../stores";
     import {getContext, onMount} from "svelte";
-
-    let email = $user.email;
-    console.log("Email : " + email);
+    import {push} from "svelte-spa-router";
 
     export let fest;
+    let email = $user.email;
     let Uid = "";
     let attended = false;
+
     const metalfestService = getContext("MetalfestService");
+
     onMount(async () => {
         const userDtls = await metalfestService.getUserDtls(email);
-        console.log("UserDtls : " + userDtls._id);
         Uid = userDtls._id;
         let i;
         for (i = 0; i < fest.attendees.length; i++) {
@@ -22,13 +22,22 @@
         }
     });
 
+    async function attendFestival(fest, userID) {
+        let success = await metalfestService.attendFestival(fest, userID);
+        push("/festivals");
+    };
 
+    async function deleteFestival(fest) {
+        let success = await metalfestService.deleteFestival(fest);
+        push("/festivals");
+    }
 </script>
+
 <p uk-margin>
     {#if attended}
-    <a class="uk-button uk-button-default" href="#">Already Attended</a>
-        {:else}
-    <a class="uk-button uk-button-primary" href="/attended/{fest._id}">Mark as Attended</a>'
-        {/if}
-    <a class="uk-button uk-button-danger" href="/delete-festival/{fest._id}">Delete Festival</a>
+        <button class="uk-button uk-button-primary uk-button-small uk-width-1-2" disabled>Already Attended</button>
+    {:else}
+        <button class="uk-button uk-button-primary uk-button-small uk-width-1-2" on:click={() => attendFestival(fest._id, Uid)}>Mark As Attended</button>
+    {/if}
+    <button class="uk-button uk-button-primary uk-button-small uk-width-1-2" on:click={() => deleteFestival(fest._id)}>Delete</button>
 </p>

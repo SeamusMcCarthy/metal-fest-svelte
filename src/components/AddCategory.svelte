@@ -1,6 +1,6 @@
 <script lang="ts">
     import {getContext} from "svelte";
-
+    export let catJustAdded;
     let categoryName = "";
     let message = "";
 
@@ -9,7 +9,7 @@
     async function addCategory() {
         let success = await metalfestService.addCategory(categoryName);
         if (success) {
-            message = "Category added";
+            if (catJustAdded) catJustAdded();
         } else {
             message = "Error trying to add category";
         }
