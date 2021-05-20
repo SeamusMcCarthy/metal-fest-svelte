@@ -5,7 +5,6 @@
     let categories = [];
     onMount(async () => {
         categories = await metalfestService.getCategories();
-        // console.log("Categories : " + categories);
     });
 </script>
     <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true;">

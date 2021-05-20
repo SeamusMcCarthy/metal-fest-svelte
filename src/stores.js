@@ -2,12 +2,12 @@ import { writable } from "svelte/store";
 
 export const mainBar = [{
     title: "Festivals",
-    icon: "fas fa-th-list fa-3x",
+    icon: "fas fa-map-marked-alt fa-3x",
     colour: "color:rgb(153, 196, 74)",
     link: "/#/festivals",
 }, {
     title: "Categories",
-    icon: "fas fa-sliders-h fa-3x",
+    icon: "fas fa-play fa-3x",
     colour: "color:rgb(63, 122, 139)",
     link: "/#/categories",
 },

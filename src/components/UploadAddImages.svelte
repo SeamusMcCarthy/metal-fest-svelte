@@ -71,7 +71,6 @@
                             <div class="uk-card-footer">
                                 <p> {image.public_id}</p>
                                 <button class="uk-button uk-button-primary uk-button-small uk-width-1-2" on:click={() => deleteImage(image.public_id)}>Delete</button>
-
                             </div>
                         </div>
                     </div>

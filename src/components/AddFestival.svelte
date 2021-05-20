@@ -13,6 +13,7 @@
     let errorMessage = "";
     let files = [];
     let imagefile;
+    export let festJustAdded;
 
     const metalfestService = getContext("MetalfestService");
 
@@ -28,7 +29,7 @@
             imagefile = e.target.result;
             let success = await metalfestService.addFestival(name, city, country, latitude, longitude, description, startDate, endDate, imagefile, categoryList);
             if (success) {
-                errorMessage = "Festival added";
+                if (festJustAdded) festJustAdded();
             } else {
                 errorMessage = "Error trying to add festival";
             }
@@ -42,7 +43,6 @@
     <div class="uk-margin uk-text-left">
         <div class="uk-margin">
             <div class="uk-inline uk-width-1-1">
-<!--                <input class="uk-input uk-form-large" type="text" name="name" placeholder="Festival name" required/>-->
                 <input bind:value={name}
                        class="uk-input uk-form-large" type="text"
                        name="name" placeholder="Festival name" required>
