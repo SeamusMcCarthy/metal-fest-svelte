@@ -1,8 +1,8 @@
 <script>
     import CategoryList from "../components/CategoryList.svelte";
     import AddCategory from "../components/AddCategory.svelte";
-    import {navBar, mainBar, subTitle, title} from "../stores"
-    // import {onMount} from "svelte";
+    import {navBar, mainBar, subTitle, title, updCat} from "../stores"
+    import {onMount, getContext} from 'svelte';
 
     title.set("Metalfest");
     subTitle.set("Add/View Current Categories");
@@ -10,7 +10,7 @@
         bar: mainBar
     });
 
-    import {onMount, getContext} from 'svelte';
+
     const metalfestService = getContext("MetalfestService");
     let categoryList;
     onMount(async () => {
@@ -22,6 +22,7 @@
     }
 
     async function refreshCategories() {
+        updCat.set({update: "Y"});
         categoryList = await metalfestService.getCategories();
     }
 </script>

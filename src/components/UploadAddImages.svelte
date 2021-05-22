@@ -25,8 +25,8 @@
         let reader = new FileReader();
         reader.onload = async function(e) {
             imagefile = e.target.result;
+            console.log(imagefile);
             let success = await metalfestService.uploadImage(imagefile, name);
-            console.log("Success = " + success);
             if (success) {
                 errorMessage = "Image added";
             } else {

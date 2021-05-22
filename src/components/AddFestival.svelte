@@ -35,6 +35,7 @@
             }
         };
         reader.readAsDataURL(ifile);
+
     }
 </script>
 
