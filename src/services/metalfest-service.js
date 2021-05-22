@@ -64,7 +64,7 @@ export class MetalfestService {
             console.log(userDetails);
             const response = await axios.put(`${this.baseUrl}/api/users/${id}`, userDetails);
             const newUser = await response.data;
-            user.set(newUser);
+            // user.set(newUser);
             return true;
         } catch (error) {
             return false;
@@ -187,8 +187,9 @@ export class MetalfestService {
 
 
 
-        async uploadImage(imagefile, name) {
+    async uploadImage(imagefile, name) {
         try {
+            console.log(imagefile);
             const image = {
                 imagefile: imagefile,
                 festName: name

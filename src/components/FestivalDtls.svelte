@@ -11,13 +11,7 @@
 
 <div class="uk-container uk-margin">
     <div class="uk-child-width-expand uk-flex-center uk-flex-middle uk-text-center uk-grid">
-<!--        <div class="uk-width-auto@m">-->
-            <!--{#if festivalDtls}-->
-            <!--    <img width="400" src="{festivalDtls.image.imageURL}" alt="">-->
-            <!--{/if}-->
-        <!--        </div>-->
         <div id="festival-map" class="ui embed" style="height:600px"></div>
-
         <div class="uk-width-expand@m">
             <div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
                 <table class="uk-table uk-table-divider">
@@ -94,7 +88,8 @@
         </div>
     </div>
 </div>
+
 {#if festivalDtls}
-<UploadAddImages name="{festivalDtls.name}" festID="{festivalDtls._id}" />
+<UploadAddImages name="{festivalDtls.name}" festID="{festivalDtls._id}" image="{festivalDtls.image.imageURL}"/>
 {/if}
 

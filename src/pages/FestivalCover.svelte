@@ -1,6 +1,6 @@
 <script>
     import FestivalList from "../components/FestivalList.svelte";
-    import {navBar, mainBar, subTitle, title} from "../stores";
+    import {navBar, mainBar, subTitle, title, updCat} from "../stores";
     import AddFestival from "../components/AddFestival.svelte";
 
     title.set("Metalfest");
@@ -19,6 +19,7 @@
 
     function festJustAdded() {
         refreshFests();
+        updCat.set({update: "Y"});
     }
 
     async function refreshFests() {

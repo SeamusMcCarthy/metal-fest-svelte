@@ -13,8 +13,10 @@
     import Router from "svelte-spa-router";
     import Sidebar from "./components/Sidebar.svelte";
 
-    setContext("MetalfestService", new MetalfestService("http://localhost:4000"));
-    setContext("UtilsService", new UtilsService("http://localhost:4000"));
+    // setContext("MetalfestService", new MetalfestService("http://localhost:4000"));
+    // setContext("UtilsService", new UtilsService("http://localhost:4000"));
+    setContext("MetalfestService", new MetalfestService("https://radiant-plateau-89790.herokuapp.com"));
+    setContext("UtilsService", new UtilsService("https://radiant-plateau-89790.herokuapp.com"));
 
     let routes = {
         "/": Main,

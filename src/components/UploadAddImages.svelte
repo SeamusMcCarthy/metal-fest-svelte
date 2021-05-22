@@ -9,6 +9,7 @@
     let success;
     let imagefile;
     let errorMessage;
+    export let image;
 
     onMount(async () => {
         images = await metalfestService.getImagesTag(name);
@@ -24,8 +25,8 @@
         let reader = new FileReader();
         reader.onload = async function(e) {
             imagefile = e.target.result;
+            console.log(imagefile);
             let success = await metalfestService.uploadImage(imagefile, name);
-            console.log("Success = " + success);
             if (success) {
                 errorMessage = "Image added";
             } else {
@@ -38,6 +39,9 @@
 </script>
 
 <div class="uk-margin uk-width-1-1 uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+    <div class="uk-container uk-padding-small">
+        <img src="{image}" alt="">
+    </div>
     <form on:submit|preventDefault={upload}>
         <div >
             <div class="uk-inline uk-width-1-1">

@@ -3,7 +3,7 @@
     import band3 from "/src/assets/band3.jpg";
     import SettingsForm from "../components/SettingsForm.svelte";
 
-    title.set("Donation Services Inc");
+    title.set("Metalfest");
     subTitle.set("Edit and save your settings");
 
     navBar.set({

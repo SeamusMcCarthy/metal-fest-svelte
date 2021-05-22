@@ -49,3 +49,7 @@ export const user = writable({
     email: "",
     token: ""
 });
+
+export const updCat = writable({
+    update: "Y"
+})
