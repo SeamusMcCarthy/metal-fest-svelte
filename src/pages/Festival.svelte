@@ -30,11 +30,10 @@
         if (!map) {
             map = new LeafletMap("festival-map", mapConfig, 'Terrain');
             map.showZoomControl();
+            map.showLayerControl();
             const festStr = `${festivalDtls.city} ${festivalDtls.country}`;
             map.addMarker({lat: lat, lng: lng}, festStr);
         } else {
-            console.log("Map object : " + lat + ' ' + lng);
-            // map.setView((5,4),8);
             let location = {lat: lat, lng: lng };
             map.moveTo(8, location);
             const festStr = `${festivalDtls.city} ${festivalDtls.country}`;
@@ -51,15 +50,6 @@
         lat = festivalDtls.latitude;
         lng = festivalDtls.longitude;
 
-        // const mapConfig = {
-        //     location: {lat: lat, lng: lng},
-        //     zoom: 8,
-        //     minZoom: 7,
-        // };
-        // map = new LeafletMap("festival-map", mapConfig, 'Terrain');
-        // const festStr = `${festivalDtls.city} ${festivalDtls.country}`;
-        // map.showZoomControl();
-        // map.addMarker({lat: lat, lng: lng}, festStr);
         subTitle.set(festivalDtls.name);
     });
 

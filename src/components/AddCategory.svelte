@@ -15,7 +15,7 @@
         }
     }
 </script>
-
+<div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
 <form on:submit|preventDefault={addCategory}>
     <div class="uk-margin uk-text-left">
         <div class="uk-margin">
@@ -36,3 +36,4 @@
         </div>
     {/if}
 </form>
+</div>
