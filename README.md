@@ -1,48 +1,66 @@
-# Svelte + Vite
+# MetalFest
 
-This template should help get you started developing with Svelte in Vite.
+An app for viewing heavy metal festival listings with a Svelte front end and Node.js backend
 
-## Recommended IDE Setup
+![MetalFest](https://res.cloudinary.com/semcwit/image/upload/v1616609902/MetalFest_ry60tb.jpg)
 
-[VSCode](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## Description
 
-## Need an official Svelte framework?
+The app can be used to add/edit heavy metal festival listings around the world. Users can tick off festivals that have been attended, edit the start/end dates, check current weather conditions and upload images of their fun times which are then stored in Cloudinary. Users can also categorise the festivals by musical genre(s).
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+Project will be amended going forward for future assignment work.
 
-## Technical considerations
+## Getting Started
 
-**Why use this over SvelteKit?**
+### Dependencies
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
-  `vite dev` and `vite build` wouldn't work in a SvelteKit environment, for example.
+Project has several dependencies (listed below with current version)
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-app` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
-
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `checkJs` in the JS template?**
-
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
 ```
+  "dependencies": {
+    "@hapi/boom": "^9.1.1",
+    "@hapi/cookie": "^11.0.2",
+    "@hapi/hapi": "^20.1.0",
+    "@hapi/inert": "^6.0.3",
+    "@hapi/joi": "^17.1.1",
+    "@hapi/vision": "^6.0.1",
+    "axios": "^0.21.1",
+    "cloudinary": "^1.25.0",
+    "dotenv": "^8.2.0",
+    "handlebars": "^4.7.7",
+    "joi": "^17.4.0",
+    "mais-mongoose-seeder": "^1.0.7",
+    "mongoose": "^5.11.17"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  }
+```
+
+### Installing
+
+* Cloudinary & Cloud Atlas details need to be added to .env if running locally
+* Cloudinary & Cloud Atlas details need to be added to config vars if hosting on Heroku
+
+### Executing program
+
+* To execute locally, run from index.js in your IDE
+* Or deploy to Glitch, Heroku etc
+
+
+## Authors
+
+Contributors names and contact info
+
+Seamus McCarthy (20091380)
+
+## Version History
+
+* 1.0
+  * Release for Assignment 1 of HDip in Computer Science
+* 1.1
+  * Updated with API endpoints for Assignment 2
+
+## Acknowledgments
+
+...
