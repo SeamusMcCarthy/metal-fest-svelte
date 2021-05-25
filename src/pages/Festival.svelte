@@ -1,5 +1,5 @@
 <script>
-    import 'leaflet/dist/leaflet.css';
+    // import 'leaflet/dist/leaflet.css';
     import FestivalDtls from "../components/FestivalDtls.svelte"
     import {navBar, mainBar, subTitle, title} from "../stores";
     import {onMount, getContext} from 'svelte';
