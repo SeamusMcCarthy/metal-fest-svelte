@@ -7,6 +7,7 @@
     import CategoryCover from "./pages/CategoryCover.svelte";
     import Festival from "./pages/Festival.svelte";
     import Settings from "./pages/Settings.svelte";
+    import Map from "./pages/Map.svelte";
     import {MetalfestService} from "./services/metalfest-service";
     import {UtilsService} from "./services/utils-service";
     import Navigator from "./components/Navigator.svelte";
@@ -25,6 +26,7 @@
         "/festivals": FestivalCover,
         "/categories": CategoryCover,
         "/fest-dtls/:id": Festival,
+        "/map": Map,
         "/logout": Main,
         "/settings": Settings,
     }
